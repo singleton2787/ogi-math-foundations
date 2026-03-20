@@ -13,7 +13,7 @@ The [Open General Intelligence (OGI) framework](https://arxiv.org/abs/2411.15832
 This repository contains the paper and benchmark code that put a formal floor under that vision:
 
 - **Stability proofs** for the attention-based weighting system (Lipschitz bounds)
-- **Complexity analysis** of the fabric interconnect protocol — and the proof that it's O(n²), which breaks at scale
+- **Complexity analysis** of the fabric interconnect protocol and the proof that it's O(n²), which breaks at scale
 - **Top-K Gating** (Theorem 3): the biologically-motivated fix that reduces complexity from O(n²dₘ) to O(k²dₘ + n(d꜀d_a))
 - **Theorem 4** with two supporting lemmas: GRU-based fusion preserves semantic relationships across modalities under explicit sufficient conditions
 - **Simulation results**: temporal stability validated across 200 processing cycles at five noise levels (σ ∈ {0.0, 0.25, 0.50, 0.75, 1.0}), with honest reporting of what the coherence objective does and doesn't buy you in single-modality conditions
