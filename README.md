@@ -24,7 +24,7 @@ This is step two of a three-step sequence. [1] was the vision. This is the forma
 
 ## Paper
 
-> Singleton, M. (2025). *Addressing Mathematical Rigor in the Open General Intelligence Framework: A Critical Analysis and Formal Implementation.* Zenodo. [DOI pending]
+> Singleton, M. (2025). *Addressing Mathematical Rigor in the Open General Intelligence Framework: A Critical Analysis and Formal Implementation.* Zenodo. [DOI: 10.5281/zenodo.19135205]
 
 Preprint available on Zenodo. arXiv submission pending endorsement in cs.AI.
 
@@ -84,7 +84,7 @@ ogi-math-foundations/
                Framework: A Critical Analysis and Formal Implementation},
   year      = {2025},
   publisher = {Zenodo},
-  doi       = {[pending]}
+  doi       = {10.5281/zenodo.19135205}
 }
 ```
 
