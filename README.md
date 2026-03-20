@@ -39,7 +39,7 @@ Preprint available on Zenodo. arXiv submission pending endorsement in cs.AI.
 | Coherence Tax (compute overhead) | +73% per-trial vs. baseline GRU |
 | Complexity reduction via Top-K Gating | O(n²dₘ) → O(k²dₘ + n(d꜀d_a)) |
 
-The stability test is the strongest empirical result. The -0.3% accuracy delta between baseline and OGI on single-modality reconstruction is theoretically expected and explained in Section VI-B of the paper — the coherence objective's benefit is conditional on genuine cross-modal ambiguity.
+The stability test is the strongest empirical result. The -0.3% accuracy delta between baseline and OGI on single-modality reconstruction is theoretically expected and explained in Section VI-B of the paper, the coherence objective's benefit is conditional on genuine cross-modal ambiguity.
 
 ---
 
