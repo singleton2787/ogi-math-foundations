@@ -1,7 +1,8 @@
 """
 OGI Framework - Theorem 4 Benchmark
-Corrected version: both conditions train, projection head added,
-timing stabilized with more trials.
+Running on laptop, no GPU - CPU only for now
+debug completed - both conditions train, projection head added
+TODO: rerun on GPU when available, expect coherence tax to drop significantly
 """
 
 import torch
@@ -9,6 +10,7 @@ import torch.nn as nn
 import time
 import numpy as np
 
+# reproducibility - don't change these or the paper numbers won't match
 torch.manual_seed(42)
 np.random.seed(42)
 
@@ -27,6 +29,7 @@ class OGIFusionCell(nn.Module):
 
         # Critic network for MINE (Lemma 4.1)
         # Takes [h_t || context] -> scalar
+        # 128 hidden is probably overkill at dim=128 but it works, revisit later
         self.critic = nn.Sequential(
             nn.Linear(hidden_dim + input_dim, 128),
             nn.ReLU(),
@@ -46,7 +49,7 @@ class OGIFusionCell(nn.Module):
         Marginal: (h_t, shuffled context) - breaks statistical dependence.
         """
         joint    = torch.cat([h_t, context], dim=1)
-        shuffled = context[torch.randperm(context.size(0))]
+        shuffled = context[torch.randperm(context.size(0))]  # breaks the joint distribution
         marginal = torch.cat([h_t, shuffled], dim=1)
 
         t_joint    = self.critic(joint)
@@ -80,7 +83,7 @@ def run_benchmark(enable_coherence=True, trials=500, dim=128, batch_size=32,
     similarities = []
     losses = []
 
-    # Warm-up pass (not timed)
+    # Warm-up pass (not timed) - first forward pass is always slow, don't count it
     h_prev = torch.zeros(batch_size, dim)
     noisy_input = context + torch.randn(batch_size, dim) * 0.5
     h_t, o_t = model(noisy_input, h_prev)
@@ -199,4 +202,5 @@ if __name__ == "__main__":
 
     run_stability_test(trials=200, noise_levels=[0.0, 0.25, 0.5, 0.75, 1.0])
 
-    print("\nDone. These numbers are what goes in the paper.")
+    # these are the numbers in the paper - Section VI
+    print("\nDone.")
