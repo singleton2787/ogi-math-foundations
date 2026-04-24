@@ -146,8 +146,8 @@ If you are working on any of these, reach out.
 ## Author
 
 **Michael Singleton**  
-Iconsoft LLC | Mechanicsville, Virginia  
-[mike@mikesingleton.info](mailto:mike@mikesingleton.info)
+Iconsoft LLC | Richmond, Virginia  
+[mike.singleton@iconsoft.us](mailto:mike.singleton@iconsoft.us)
 
 IEEE member. M.S. Applied Mathematics (MIT). Prior work: [OGI Framework](https://arxiv.org/abs/2411.15832) (IEEE SysCon 2024).
 
